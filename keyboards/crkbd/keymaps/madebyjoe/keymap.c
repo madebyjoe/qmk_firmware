@@ -61,6 +61,12 @@ enum macro_keycodes {
 #define KC_ENT_RSE  LT(_RAISE, KC_ENT)
 #define KC_CTL_SPC  LCTL(KC_SPC)
 #define KC_STAB     LSFT(KC_TAB)
+#define KC_LTAB     LGUI(KC_LCBR) // cmd shift left BRC
+#define KC_RTAB     LGUI(KC_RCBR) // cmd shift right BRC
+#define KC_CMDZ     LGUI(KC_Z)
+#define KC_CMDX     LGUI(KC_X)
+#define KC_CMDC     LGUI(KC_C)
+#define KC_CMDV     LGUI(KC_V)
 #define KC_CTLTB    CTL_T(KC_TAB)
 #define KC_GUIEI    GUI_T(KC_LANG2)
 #define KC_ALTKN    ALT_T(KC_LANG1)
@@ -80,9 +86,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LBRC,  RBRC,  PIPE,  BSLS,   GRV,\
+      CTLTB,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LPRN,  RPRN,  PIPE,  BSLS,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LPRN,  RPRN, QUOT_SYM,\
+    ESC_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LBRC,  RBRC, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                   MINS,  UNDS,  LABK,  RABK,  SLSH,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -106,11 +112,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NAVIGATION
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                    TAB,  PGUP,    UP,  PGDN, XXXXX, XXXXX,\
+      CTLTB, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                   TAB,  PGUP,    UP,  PGDN,  LTAB,  RTAB,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                   BSPC,  LEFT,  DOWN,  RGHT, XXXXX, QUOT_SYM,\
+    ESC_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT, XXXXX, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT, XXXXX, XXXXX,  BRID,  BRIU,  _MUTE,                   STAB,  HOME, XXXXX,   END, XXXXX, XXXXX,\
+       LSFT,  CMDZ,  CMDX,  CMDC,  CMDV, _MUTE,                   STAB,  HOME, XXXXX,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                    LGUI, LOWER,   DEL,     SPC, ENT_RSE, RALT \
                               //`--------------------'  `--------------------'
