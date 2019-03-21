@@ -29,6 +29,7 @@ extern uint8_t is_master;
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
+  SYMBOL,
   LOWER,
   RAISE,
   ADJUST,
@@ -40,34 +41,36 @@ enum macro_keycodes {
   KC_SAMPLEMACRO,
 };
 
-#define KC______ KC_TRNS
-#define KC_XXXXX KC_NO
-#define KC_LOWER LOWER
-#define KC_RAISE RAISE
-#define KC_RST   RESET
-#define KC_LRST  RGBRST
-#define KC_LTOG  RGB_TOG
-#define KC_LHUI  RGB_HUI
-#define KC_LHUD  RGB_HUD
-#define KC_LSAI  RGB_SAI
-#define KC_LSAD  RGB_SAD
-#define KC_LVAI  RGB_VAI
-#define KC_LVAD  RGB_VAD
-#define KC_LMOD  RGB_MOD
-#define KC_ESC_SYM LT(_SYMBOL, KC_ESC)
-#define KC_ENT_RSE LT(_RAISE, KC_ENT)
-#define KC_CTL_SPC LCTL(KC_SPC)
-#define KC_STAB LSFT(KC_TAB)
-#define KC_CTLTB CTL_T(KC_TAB)
-#define KC_GUIEI GUI_T(KC_LANG2)
-#define KC_ALTKN ALT_T(KC_LANG1)
+#define KC______  KC_TRNS
+#define KC_XXXXX  KC_NO
+#define KC_SYMBOL SYMBOL
+#define KC_LOWER  LOWER
+#define KC_RAISE  RAISE
+#define KC_RST    RESET
+#define KC_LRST   RGBRST
+#define KC_LTOG   RGB_TOG
+#define KC_LHUI   RGB_HUI
+#define KC_LHUD   RGB_HUD
+#define KC_LSAI   RGB_SAI
+#define KC_LSAD   RGB_SAD
+#define KC_LVAI   RGB_VAI
+#define KC_LVAD   RGB_VAD
+#define KC_LMOD   RGB_MOD
+#define KC_ESC_SYM  LT(_SYMBOL, KC_ESC)
+#define KC_QUOT_SYM LT(_SYMBOL, KC_QUOT)
+#define KC_ENT_RSE  LT(_RAISE, KC_ENT)
+#define KC_CTL_SPC  LCTL(KC_SPC)
+#define KC_STAB     LSFT(KC_TAB)
+#define KC_CTLTB    CTL_T(KC_TAB)
+#define KC_GUIEI    GUI_T(KC_LANG2)
+#define KC_ALTKN    ALT_T(KC_LANG1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P, XXXXX,\
+      CTLTB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  LALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
+    ESC_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -77,43 +80,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  BSPC,\
+      CTLTB,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LBRC,  RBRC,  PIPE,  BSLS,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  PIPE,   GRV,\
+    ESC_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LPRN,  RPRN, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  BSLS,  RSFT,\
+       LSFT,     Z,     X,     C,     V,     B,                   MINS,  UNDS,  LABK,  RABK,  SLSH,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   LGUI, LOWER, CTL_SPC,     SPC, ENT_RSE, RALT \
                               //`--------------------'  `--------------------'
   ),
 
-  // NUM
+  // NUMBERS
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
+      CTLTB, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  LALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,    F1,    F2,    F3,    F4,    F5,                     F6,     4,     5,     6,   F10, XXXXX,\
+    ESC_SYM, XXXXX,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,     0, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,   F11,   F12,   F13,   F14,   F15,                      0,     1,     2,     3,   F20, XXXXX,\
+       LSFT,  CAPS,    F1,    F2,    F3,   F12,                   MINS,     1,     2,     3,  SLSH,  RSFT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   LGUI, LOWER,  BSPC,      SPC, ENT_RSE,  DOT \
                               //`--------------------'  `--------------------'
   ),
 
-  // NAV
+  // NAVIGATION
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
+      CTLTB, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                    TAB,  PGUP,    UP,  PGDN, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+    ESC_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                   BSPC,  LEFT,  DOWN,  RGHT, XXXXX, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
+       LSFT, XXXXX, XXXXX,  BRID,  BRIU,  _MUTE,                   STAB,  HOME, XXXXX,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LGUI, LOWER,  BSPC,     SPC, ENT_RSE, RALT \
+                                   LGUI, LOWER,   DEL,     SPC, ENT_RSE, RALT \
                               //`--------------------'  `--------------------'
   ),
 
-  // FUNC
+  // FUNCTIONS?
   [_ADJUST] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
         RST,  LRST, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
