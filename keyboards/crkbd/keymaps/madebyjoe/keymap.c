@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
      CTLESC, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                   TAB,  PGUP,    UP,  PGDN,  LTAB,  RTAB,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    TAB_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT, XXXXX, QUOT_SYM,\
+    TAB_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT,   ENT, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  CMDZ,  CMDX,  CMDC,  CMDV, _MUTE,                   STAB,  HOME, XXXXX,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
