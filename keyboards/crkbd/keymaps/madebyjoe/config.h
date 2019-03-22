@@ -32,8 +32,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define USE_SERIAL_PD2
 
-#define RETRO_TAPPING
+// retro tapping will make it such that if a mod tap is released without another
+// key press, it will activate tap. Instead of using the tapping term speed
+// #define RETRO_TAPPING
 #define TAPPING_TERM 200
+#define TAPPING_TOGGLE 2
 
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS

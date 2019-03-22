@@ -57,8 +57,11 @@ enum macro_keycodes {
 #define KC_LVAD   RGB_VAD
 #define KC_LMOD   RGB_MOD
 #define KC_ESC_SYM  LT(_SYMBOL, KC_ESC)
+#define KC_TAB_SYM  LT(_SYMBOL, KC_TAB)
 #define KC_QUOT_SYM LT(_SYMBOL, KC_QUOT)
 #define KC_ENT_RSE  LT(_RAISE, KC_ENT)
+#define KC_0_RSE    LT(_RAISE, KC_0)
+#define KC_TT_LWR   TT(_LOWER)
 #define KC_CTL_SPC  LCTL(KC_SPC)
 #define KC_STAB     LSFT(KC_TAB)
 #define KC_LTAB     LGUI(KC_LCBR) // cmd shift left BRC
@@ -68,27 +71,28 @@ enum macro_keycodes {
 #define KC_CMDC     LGUI(KC_C)
 #define KC_CMDV     LGUI(KC_V)
 #define KC_CTLTB    CTL_T(KC_TAB)
+#define KC_CTLESC   CTL_T(KC_ESC)
 #define KC_GUIEI    GUI_T(KC_LANG2)
 #define KC_ALTKN    ALT_T(KC_LANG1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  LALT,\
+     CTLESC,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  LALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN, QUOT_SYM,\
+    TAB_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, LOWER,  BSPC,      SPC, ENT_RSE, RALT \
+                                  LGUI, TT_LWR,  BSPC,      SPC, ENT_RSE, RALT \
                               //`--------------------'  `--------------------'
   ),
 
   [_SYMBOL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LPRN,  RPRN,  PIPE,  BSLS,   GRV,\
+     CTLESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LPRN,  RPRN,  PIPE,  BSLS,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LBRC,  RBRC, QUOT_SYM,\
+    TAB_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LBRC,  RBRC, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                   MINS,  UNDS,  LABK,  RABK,  SLSH,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -99,22 +103,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NUMBERS
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  LALT,\
+     CTLESC, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  LALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM, XXXXX,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,     0, QUOT_SYM,\
+    TAB_SYM, XXXXX,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,   ENT, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  CAPS,    F1,    F2,    F3,   F12,                   MINS,     1,     2,     3,  SLSH,  RSFT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, LOWER,  BSPC,      SPC, ENT_RSE,  DOT \
+                                  LGUI, TT_LWR,  BSPC,      SPC,  0_RSE,  DOT \
                               //`--------------------'  `--------------------'
   ),
 
   // NAVIGATION
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      CTLTB, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                   TAB,  PGUP,    UP,  PGDN,  LTAB,  RTAB,\
+     CTLESC, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                   TAB,  PGUP,    UP,  PGDN,  LTAB,  RTAB,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT, XXXXX, QUOT_SYM,\
+    TAB_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT, XXXXX, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  CMDZ,  CMDX,  CMDC,  CMDV, _MUTE,                   STAB,  HOME, XXXXX,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
