@@ -78,9 +78,9 @@ enum macro_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     CTLESC,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  LALT,\
+     CTLTB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  LALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    TAB_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN, QUOT_SYM,\
+    ESC_SYM,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -90,9 +90,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     CTLESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LPRN,  RPRN,  PIPE,  BSLS,   GRV,\
+     CTLTB,  EXLM,    AT,  HASH,   DLR,  PERC,                   PLUS,  LPRN,  RPRN,  PIPE,  BSLS,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    TAB_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LBRC,  RBRC, QUOT_SYM,\
+    ESC_SYM,  CIRC,  AMPR,  ASTR,  LPRN,  RPRN,                    EQL,  LCBR,  RCBR,  LBRC,  RBRC, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                   MINS,  UNDS,  LABK,  RABK,  SLSH,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -103,9 +103,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NUMBERS
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     CTLESC, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  LALT,\
+     CTLTB, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  LALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    TAB_SYM, XXXXX,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,   ENT, QUOT_SYM,\
+    ESC_SYM, XXXXX,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,   ENT, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  CAPS,    F1,    F2,    F3,   F12,                   MINS,     1,     2,     3,  SLSH,  RSFT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -116,9 +116,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NAVIGATION
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     CTLESC, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                   TAB,  PGUP,    UP,  PGDN,  LTAB,  RTAB,\
+     CTLTB, XXXXX,  MRWD,  MPLY,  MFFD, _VOLUP,                   TAB,  PGUP,    UP,  PGDN,  LTAB,  RTAB,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    TAB_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT,   ENT, QUOT_SYM,\
+    ESC_SYM,  LCTL,  LALT,  LSFT,  LGUI, _VOLDOWN,                BSPC,  LEFT,  DOWN,  RGHT,   ENT, QUOT_SYM,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  CMDZ,  CMDX,  CMDC,  CMDV, _MUTE,                   STAB,  HOME, XXXXX,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
