@@ -61,6 +61,7 @@ enum macro_keycodes {
 #define KC_QUOT_SYM LT(_SYMBOL, KC_QUOT)
 #define KC_ENT_RSE  LT(_RAISE, KC_ENT)
 #define KC_0_RSE    LT(_RAISE, KC_0)
+#define KC_DOT_RSE  LT(_RAISE, KC_DOT)
 #define KC_TT_LWR   TT(_LOWER)
 #define KC_CTL_SPC  LCTL(KC_SPC)
 #define KC_STAB     LSFT(KC_TAB)
@@ -103,13 +104,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NUMBERS
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     CTLTB, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  LALT,\
+     CTLTB, XXXXX,    F7,    F8,    F9,   F10,                   PLUS,     7,     8,     9,  ASTR,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    ESC_SYM, XXXXX,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,   ENT, QUOT_SYM,\
+    ESC_SYM,  LALT,    F4,    F5,    F6,   F11,                    EQL,     4,     5,     6,   ENT,  TAB,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,  CAPS,    F1,    F2,    F3,   F12,                   MINS,     1,     2,     3,  SLSH,  RSFT,\
+       LSFT,  CAPS,    F1,    F2,    F3,   F12,                   MINS,     1,     2,     3,  SLSH,  DEL,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, TT_LWR,  BSPC,      SPC,  0_RSE,  DOT \
+                                  LGUI, TT_LWR,  BSPC,      0, DOT_RSE,  LALT \
                               //`--------------------'  `--------------------'
   ),
 
