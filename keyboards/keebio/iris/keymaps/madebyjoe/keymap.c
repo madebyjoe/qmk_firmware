@@ -26,6 +26,7 @@ enum custom_keycodes {
 #define KC_QUOT_SYM LT(_SYMBOL, KC_QUOT)
 #define KC_ENT_RSE  LT(_RAISE, KC_ENT)
 #define KC_0_RSE    LT(_RAISE, KC_0)
+#define KC_DOT_RSE  LT(_RAISE, KC_DOT)
 #define KC_TT_LWR   TT(_LOWER)
 #define KC_CTL_SPC  LCTL(KC_SPC)
 #define KC_STAB     LSFT(KC_TAB)
@@ -50,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       ESC_SYM,   A,       S,       D,       F,       G,                                  H,       J,       K,       L,      SCLN, QUOT_SYM,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       LSFT,     Z,       X,       C,       V,       B,      HOME,             XXXXX,    N,       M,      COMM,    DOT,     SLSH,    RSFT,
+       LSFT,     Z,       X,       C,       V,       B,      LALT,             XXXXX,    N,       M,      COMM,    DOT,     SLSH,    RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       LGUI,   TT_LWR,   BSPC,                      SPC,    ENT_RSE,  RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       ESC_SYM,  CIRC,    AMPR,   ASTR,    LPRN,    RPRN,                                 EQL,    LCBR,    RCBR,    LBRC,    RBRC,  QUOT_SYM,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       LSFT,     Z,       X,       C,       V,       B,      HOME,             XXXXX,   MINS,    UNDS,    LABK,    RABK,    SLSH,    TILD,
+       LSFT,     Z,       X,       C,       V,       B,      LALT,             XXXXX,   MINS,    UNDS,    LABK,    RABK,    SLSH,    TILD,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       LGUI,   LOWER,   CTL_SPC,                      SPC,    ENT_RSE,  RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -73,15 +74,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NUMBERS
   [_LOWER] = LAYOUT_kc(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       ESC,     F1,      F2,      F3,      F4,      F5,                                  F6,      F7,      F8,      F9,      F10,     BSPC,
+       ESC,     F1,      F2,      F3,      F4,      F5,                                  F6,      F7,      F8,      F9,      F10,    BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      CTLTB,   XXXXX,    F7,      F8,      F9,      F10,                                PLUS,     7,       8,       9,      ASTR,    LALT,
+      CTLTB,    STAB,    F7,      F8,      F9,      F10,                                PLUS,     7,       8,       9,      ASTR,    BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      ESC_SYM, XXXXX,    F4,      F5,      F6,      F11,                                 EQL,     4,       5,       6,       ENT,  QUOT_SYM,
+      ESC_SYM,  LALT,    F4,      F5,      F6,      F11,                                 EQL,     4,       5,       6,       ENT,     TAB,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       LSFT,    CAPS,    F1,      F2,      F3,      F12,     HOME,             XXXXX,   MINS,     1,       2,       3,      SLSH,    RSFT,
+       LSFT,    CAPS,    F1,      F2,      F3,      F12,     LALT,             XXXXX,   MINS,     1,       2,       3,      SLSH,     DEL,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      LGUI,   TT_LWR,   BSPC,                      SPC,    0_RSE,     DOT
+                                      LGUI,   TT_LWR,   BSPC,                        0,    DOT_RSE,    LALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -94,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      ESC_SYM,   LCTL,    LALT,    LSFT,    LGUI,  _VOLDOWN,                             BSPC,    LEFT,    DOWN,    RGHT,     ENT,  QUOT_SYM,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       LSFT,    CMDZ,    CMDX,    CMDC,    CMDV,   _MUTE,    HOME,             XXXXX,   STAB,    HOME,   XXXXX,    END,     XXXXX,   XXXXX,
+       LSFT,    CMDZ,    CMDX,    CMDC,    CMDV,   _MUTE,    LALT,             XXXXX,   STAB,    HOME,   XXXXX,    END,     XXXXX,   XXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       LGUI,   LOWER,   DEL,                        SPC,    ENT_RSE,  RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
